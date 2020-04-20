@@ -1,4 +1,4 @@
-// Repeat Function
+// Repeat Function #1
 
 function repeat(fn, n) {
     for(let i = 0; i < n; i++) {
@@ -17,7 +17,7 @@ function goodbye() {
 repeat(hello, 5);
 repeat(goodbye, 5);
 
-// Filter Function
+// Filter Function #2
 
 function filter(arr, fn) {
     let newArray = [];
@@ -41,6 +41,33 @@ console.log(filteredNames);
 // Problem 2 Bonus
 console.log(filter(myNames, (n) => { return n[0] === 'R';}));
 
-// Functions as return values
+
+// Functions as return values #3
+
+function hazardWarningCounter(typeOfWarning) {
+    let warningCounter = 0;
+
+    return (location) => {
+        warningCounter++;
+        // Bonus credit!
+        const word = warningCounter !== 1 ? 'times' : 'time';
+        console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} ${word} today!`);
+    };
+}
+
+const rocksWarning = hazardWarningCounter('Rocks on the Road');
+const tornadoWarning = hazardWarningCounter('Tornado');
+const tidalWave = hazardWarningCounter('Tidal wave');
+
+rocksWarning('1st');
+rocksWarning('2nd');
+
+tornadoWarning('1st');
+tornadoWarning('2nd');
+
+tidalWave('1st');
+tidalWave('2nd');
+tidalWave('3rd');
+tidalWave('4th');
 
 
