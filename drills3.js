@@ -98,3 +98,20 @@ movements.forEach(x => {
     console.log(`Movement #2: ${Math.abs(x[1])} ${word2}`);
 });
 
+// ----------------------
+// Reduce
+// ----------------------
+
+let test = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+
+let str = test.split(" ").reduce((a,b) => {
+    if(b.length === 3) {
+        a.push(" ");
+    } else {
+        a.push(b[b.length - 1].toUpperCase());
+    }
+    return a;
+}, []).join("");
+
+console.log(str);
+
