@@ -1,5 +1,6 @@
+// ----------------------
 // Repeat Function #1
-
+// ----------------------
 function repeat(fn, n) {
     for(let i = 0; i < n; i++) {
         fn();
@@ -17,8 +18,9 @@ function goodbye() {
 repeat(hello, 5);
 repeat(goodbye, 5);
 
+// ----------------------
 // Filter Function #2
-
+// ----------------------
 function filter(arr, fn) {
     let newArray = [];
 
@@ -41,9 +43,9 @@ console.log(filteredNames);
 // Problem 2 Bonus
 console.log(filter(myNames, (n) => { return n[0] === 'R';}));
 
-
+// ----------------------
 // Functions as return values #3
-
+// ----------------------
 function hazardWarningCounter(typeOfWarning) {
     let warningCounter = 0;
 
@@ -70,4 +72,29 @@ tidalWave('2nd');
 tidalWave('3rd');
 tidalWave('4th');
 
+// ----------------------
+// forEach, filter, map
+// ----------------------
+
+let movements = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+// Filter
+console.log(movements.filter(x => (x[0] >= 0 && x[1] >= 0)));
+
+// Map
+let steps = movements.map(x => Math.abs(x[0]) + Math.abs(x[1]));
+console.log(steps);
+
+// forEach
+movements.forEach(x => {
+    let word1 = "steps";
+    let word2 = "steps";
+    if(Math.abs(x[0]) === 1) {
+        word1 = "step";
+    } else if(Math.abs(x[1]) === 1) {
+        word2 = "step";
+    }
+    console.log(`Movement #1: ${Math.abs(x[0])} ${word1}`);
+    console.log(`Movement #2: ${Math.abs(x[1])} ${word2}`);
+});
 
